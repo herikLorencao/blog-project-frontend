@@ -1,1 +1,54 @@
-// app global css in SCSS form
+@import "pages/index";
+
+@font-face {
+  font-family: 'Segoe UI Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Regular'), url('./fonts/Segoe UI.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Segoe UI Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Italic'), url('./fonts/Segoe UI Italic.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Segoe UI Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Bold'), url('./fonts/Segoe UI Bold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Segoe UI Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Bold Italic'), url('./fonts/Segoe UI Bold Italic.woff') format('woff');
+}
+
+body {
+  background-color: $background-dark-gray;
+  font-family: "Segoe UI Regular", sans-serif;
+}
+
+.breakpoint-grid {
+  * {
+    max-width: 1140px;
+  }
+}
+
+.grid-container {
+  width: 100%;
+}
+
+h1 {
+  color: $white;
+  font-family: "Segoe UI Regular", sans-serif;
+  font-size: $font-very-large;
+  line-height: 2em;
+}

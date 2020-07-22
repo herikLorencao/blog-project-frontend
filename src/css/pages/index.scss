@@ -1,0 +1,81 @@
+.home-dark-card {
+  width: 100%;
+  height: 350px;
+}
+
+.home-light-card {
+  width: 100%;
+  height: 350px;
+  background-color: $background-gray;
+}
+
+.home-light-card-small {
+  width: 100%;
+  height: 300px;
+  background-color: $background-gray;
+}
+
+.profile-text-info {
+  width: 100%;
+  color: $white;
+
+  .profile-name {
+    font-size: $font-extra-large;
+    margin-bottom: 10px;
+  }
+
+  .profile-job {
+    font-size: $font-large;
+    background-color: $gray;
+    padding: 5px 0;
+  }
+
+  // Mudar name-size de acordo com largura da tela (Adicionar media-query)
+
+  .name-size {
+    width: 50%;
+  }
+}
+
+.profile-photo {
+  img {
+    width: 270px;
+  }
+}
+
+
+.profile-links {
+  width: 60%;
+  font-size: 7em;
+
+  .profile-link {
+    color: $white;
+  }
+
+  .profile-link:hover {
+    color: $gray;
+  }
+}
+
+.places-images {
+  width: 60%;
+}
+
+.contact-info {
+  color: $white;
+  width: 100%;
+
+  .icon {
+    font-size: $font-extra-large;
+    margin-right: 5%;
+  }
+
+  span {
+    font-size: 1.6em;
+  }
+
+  div {
+    height: 70px;
+    width: 38%;
+  }
+}
