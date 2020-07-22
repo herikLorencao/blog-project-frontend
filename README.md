@@ -1,6 +1,10 @@
 # Blog Project (blog-project-frontend)
 
-A blog site with content manager
+Um projeto de blog para portifólio com gerenciador de conteúdo
+
+## Link do protótipo
+
+[Protótipo](https://xd.adobe.com/view/06090cf0-76a2-4898-45ee-7b37e8738984-7038/)
 
 ## Install the dependencies
 ```bash
