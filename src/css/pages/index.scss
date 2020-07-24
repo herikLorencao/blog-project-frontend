@@ -1,12 +1,21 @@
 .home-dark-card {
   width: 100%;
   height: 350px;
+
+  @media (max-width: $breakpoint-md-min) {
+    height: 100%;
+    padding-bottom: 20px;
+  }
 }
 
 .home-light-card {
   width: 100%;
   height: 350px;
   background-color: $background-gray;
+
+  @media (max-width: $breakpoint-md-min) {
+    height: 600px;
+  }
 }
 
 .home-light-card-small {
@@ -19,9 +28,20 @@
   width: 100%;
   color: $white;
 
+  @media (max-width: $breakpoint-md-min) {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
   .profile-name {
     font-size: $font-extra-large;
     margin-bottom: 10px;
+
+    @media (max-width: $breakpoint-md-min) {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 
   .profile-job {
@@ -29,8 +49,6 @@
     background-color: $gray;
     padding: 5px 0;
   }
-
-  // Mudar name-size de acordo com largura da tela (Adicionar media-query)
 
   .name-size {
     width: 50%;
@@ -41,8 +59,16 @@
   img {
     width: 270px;
   }
-}
 
+  @media (max-width: $breakpoint-md-min) {
+    width: 90%;
+    margin-top: 20px;
+
+    img {
+      width: 50%;
+    }
+  }
+}
 
 .profile-links {
   width: 60%;
@@ -55,10 +81,23 @@
   .profile-link:hover {
     color: $gray;
   }
+
+  @media (max-width: $breakpoint-md-min) {
+    width: 100%;
+  }
 }
 
 .places-images {
   width: 60%;
+
+  @media (max-width: $breakpoint-md-min) {
+    width: 100%;
+    margin-bottom: 30px;
+
+    * {
+      margin-top: 10px;
+    }
+  }
 }
 
 .contact-info {
@@ -77,5 +116,11 @@
   div {
     height: 70px;
     width: 38%;
+  }
+
+  @media (max-width: $breakpoint-md-min) {
+    div {
+      width: 100%;
+    }
   }
 }
