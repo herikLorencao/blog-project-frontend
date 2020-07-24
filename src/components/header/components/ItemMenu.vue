@@ -23,19 +23,15 @@ export default {
       required: true,
       type: String,
     },
-  },
-  data() {
-    return {
-      active: false,
-    };
+    active: {
+      required: true,
+      type: String,
+    },
   },
   methods: {
     showActiveMenu() {
-      return this.active ? 'enable' : 'disable';
+      return this.active === this.name ? 'enable' : 'disable';
     },
-  },
-  mounted() {
-    if (this.$route.path === this.link) this.active = true;
   },
 };
 </script>
