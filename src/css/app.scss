@@ -1,5 +1,6 @@
 @import "pages/index";
 @import "pages/project";
+@import "pages/login";
 
 @font-face {
   font-family: 'Segoe UI Regular';
@@ -52,4 +53,53 @@ h1 {
   font-family: "Segoe UI Regular", sans-serif;
   font-size: $font-very-large;
   line-height: 2em;
+}
+
+.header-style {
+  background-color: $gray;
+}
+
+.side-menu {
+  * {
+    background-color: $background-gray;
+    color: $white;
+  }
+
+  .menu-list {
+    font-size: $font-normal;
+    margin-top: 50px;
+
+    .submenu {
+      margin-left: 20px;
+    }
+  }
+}
+
+.footer-style {
+  background-color: $background-dark-gray;
+  height: 50px;
+}
+
+.admin-page {
+  width: 95%;
+  background-color: $background-gray;
+}
+
+.admin-buttons {
+  width: 100%;
+  color: $white;
+
+  .btn-cancelar {
+    font-size: 1.1em;
+    width: 130px;
+    background-color: $gray;
+    margin-right: 30px;
+  }
+
+  .btn-salvar {
+    font-size: 1.1em;
+    width: 130px;
+    background-color: $gray;
+    margin-left: 30px;
+  }
 }
