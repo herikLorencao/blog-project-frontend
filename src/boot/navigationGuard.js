@@ -1,7 +1,16 @@
-// import something here
+import AuthService from 'src/services/AuthService';
 
-// "async" is optional;
-// more info on params: https://quasar.dev/quasar-cli/cli-documentation/boot-files#Anatomy-of-a-boot-file
-export default async (/* { app, router, Vue ... } */) => {
+export default async ({ router, store }) => {
+  router.beforeEach((to, from, next) => {
+    const authService = new AuthService();
+    authService.findNewToken()
+      .then((tokenInfo) => {
+        // noinspection JSUnresolvedVariable
+        if (tokenInfo && tokenInfo.access_token) {
+          store.commit('login/setToken', tokenInfo.access_token);
+        }
+      });
 
+    next();
+  });
 };
