@@ -8,7 +8,7 @@
                  placeholder="senha" />
       </div>
       <div class="login-buttons column items-center">
-        <q-btn class="login-button" no-caps>Entrar</q-btn>
+        <q-btn class="login-button" no-caps @click="login()">Entrar</q-btn>
         <router-link class="link" to="esqueceusenha">
           Esqueceu a senha?
         </router-link>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import LoginAdminService from 'src/services/LoginAdminService';
+
 export default {
   data() {
     return {
@@ -26,6 +28,16 @@ export default {
         password: '',
       },
     };
+  },
+  methods: {
+    async login() {
+      const loginService = new LoginAdminService();
+      const isLogged = await loginService.verifyLogin(this.loginForm);
+
+      if (isLogged) {
+        await this.$router.push('/admin');
+      }
+    },
   },
 };
 </script>

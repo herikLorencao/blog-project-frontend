@@ -14,8 +14,11 @@ Vue.use(Vuex);
  * with the Store instance.
  */
 
+// eslint-disable-next-line import/no-mutable-exports
+let Store = null;
+
 export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
+  Store = new Vuex.Store({
     modules: {
       login,
     },
@@ -27,3 +30,5 @@ export default function (/* { ssrContext } */) {
 
   return Store;
 }
+
+export { Store };

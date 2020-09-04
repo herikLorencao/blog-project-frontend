@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import notify, { TypeMessage } from 'src/mixins/notification';
+
 export default {
   data() {
     return {
@@ -90,7 +92,8 @@ export default {
     },
     logout() {
       this.$store.commit('login/defineUserId', null);
-      this.$router.push('/login');
+      this.$router.push('/admin/login');
+      notify('Logout realizado com sucesso', TypeMessage.success);
     },
   },
   async mounted() {

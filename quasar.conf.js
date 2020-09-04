@@ -48,7 +48,7 @@ module.exports = function (/* ctx */) {
       vueRouterMode: 'history', // available values: 'hash', 'history'
       env: {
         API_URL: 'http://localhost:8000/api',
-        API_USER: 'adminToken',
+        API_USER: 'adminTest',
         API_PASSWORD: '123456',
       },
       // transpile: false,

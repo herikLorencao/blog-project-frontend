@@ -17,7 +17,11 @@ export default class AuthService {
 
     try {
       const resp = await this.client.post('/auth', authForm);
-      return resp.data;
+
+      if (resp.data.access_token) {
+        return resp.data.access_token;
+      }
+      throw new Error();
     } catch (e) {
       notification('Não foi possível se conectar a API', TypeMessage.error);
       return false;
