@@ -2,6 +2,13 @@
 @import "pages/project";
 @import "pages/login";
 
+@import "adminPages/admin";
+@import "adminPages/category";
+@import "adminPages/comment";
+@import "adminPages/post";
+@import "adminPages/project";
+@import "adminPages/reader";
+
 @font-face {
   font-family: 'Segoe UI Regular';
   font-style: normal;
@@ -88,6 +95,7 @@ h1 {
 .admin-buttons {
   width: 100%;
   color: $white;
+  margin-bottom: 30px;
 
   .btn-cancelar {
     font-size: 1.1em;
@@ -107,4 +115,24 @@ h1 {
 .btn-logout {
   width: 100px;
   border-radius: 5px;
+}
+
+.table {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  .action-buttons {
+    .btn {
+      background-color: $background-gray;
+    }
+  }
+
+  .btn-space {
+    margin-left: 15px;
+  }
+}
+
+.header-cell-style {
+  text-align: center;
+  color: #14DB71;
 }

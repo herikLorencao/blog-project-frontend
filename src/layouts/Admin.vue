@@ -49,9 +49,6 @@
         <q-item to="/admin/posts"  v-show="menuOpen === 'posts'" clickable>
           <q-item-section class="submenu">Listar Posts</q-item-section>
         </q-item>
-        <q-item v-show="menuOpen === 'posts'" clickable>
-          <q-item-section class="submenu">Escrever Posts</q-item-section>
-        </q-item>
         <q-item to="/admin/posts/comentarios" v-show="menuOpen === 'posts'" clickable>
           <q-item-section class="submenu">Comentários</q-item-section>
         </q-item>
