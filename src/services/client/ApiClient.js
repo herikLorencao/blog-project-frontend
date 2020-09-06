@@ -19,7 +19,7 @@ export default class ApiClient {
       const resp = await this.client.get(uri);
       return resp.data;
     } catch (e) {
-      notify('Ocorreram problemas na requisição', TypeMessage.error);
+      this.handleErrors(e);
       return [];
     }
   }
@@ -29,7 +29,7 @@ export default class ApiClient {
       const resp = await this.client.get(`${uri}/${id}`);
       return resp.data;
     } catch (e) {
-      notify('Ocorreram problemas na requisição', TypeMessage.error);
+      this.handleErrors(e);
       return false;
     }
   }
@@ -39,7 +39,7 @@ export default class ApiClient {
       const resp = await this.client.post(uri, data);
       return resp.data;
     } catch (e) {
-      notify('Ocorreram problemas na requisição', TypeMessage.error);
+      this.handleErrors(e);
       return false;
     }
   }
@@ -49,7 +49,7 @@ export default class ApiClient {
       const resp = await this.client.put(`${uri}/${id}`, data);
       return resp.data;
     } catch (e) {
-      notify('Ocorreram problemas na requisição', TypeMessage.error);
+      this.handleErrors(e);
       return false;
     }
   }
@@ -59,8 +59,22 @@ export default class ApiClient {
       const resp = await this.client.delete(`${uri}/${id}`);
       return resp.data;
     } catch (e) {
-      notify('Ocorreram problemas na requisição', TypeMessage.error);
+      this.handleErrors(e);
       return false;
+    }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  handleErrors(e) {
+    if (e.response) {
+      const errorObject = e.response.data;
+      const keys = Object.keys(errorObject);
+
+      keys.forEach((errorField) => {
+        notify(errorObject[errorField], TypeMessage.error);
+      });
+    } else {
+      notify('Ocorreu um erro inesperado na API', TypeMessage.error);
     }
   }
 }

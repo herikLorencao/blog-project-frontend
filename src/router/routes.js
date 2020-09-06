@@ -14,29 +14,68 @@ const routes = [
     ],
   },
   {
-    path: '/admin',
-    component: () => import('layouts/Admin.vue'),
-    children: [
-      { path: 'projetos', component: () => import('pages/admin/Projects.vue') },
-      { path: 'categorias', component: () => import('pages/admin/Categories.vue') },
-      { path: 'posts', component: () => import('pages/admin/Posts.vue') },
-      { path: 'posts/comentarios', component: () => import('pages/admin/Comments.vue') },
-      { path: 'administradores', component: () => import('pages/admin/AdminUsers.vue') },
-      { path: 'leitores', component: () => import('pages/admin/Readers.vue') },
-    ],
-  },
-  {
     path: '/login',
     component: () => import('layouts/Login.vue'),
     children: [
-      { path: '', component: () => import('pages/UsersLogin.vue') },
+      { path: '', component: () => import('pages/login/UsersLogin.vue') },
+    ],
+  },
+  {
+    path: '/admin',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/Index.vue') },
     ],
   },
   {
     path: '/admin/login',
     component: () => import('layouts/Login.vue'),
     children: [
-      { path: '', component: () => import('pages/AdminLogin') },
+      { path: '', component: () => import('pages/login/AdminLogin') },
+    ],
+  },
+  {
+    path: '/admin/projetos',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/projects/Projects.vue') },
+      { path: 'adicionar', component: () => import('pages/admin/projects/CreateProject.vue') },
+      { path: ':id', component: () => import('pages/admin/projects/EditProject.vue') },
+    ],
+  },
+  {
+    path: '/admin/categorias',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/categories/Categories.vue') },
+    ],
+  },
+  {
+    path: '/admin/posts',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/posts/Posts.vue') },
+    ],
+  },
+  {
+    path: '/admin/posts/comentarios',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/comments/Comments.vue') },
+    ],
+  },
+  {
+    path: '/admin/administradores',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/admin/AdminUsers.vue') },
+    ],
+  },
+  {
+    path: '/admin/leitores',
+    component: () => import('layouts/Admin.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/readers/Readers.vue') },
     ],
   },
   {

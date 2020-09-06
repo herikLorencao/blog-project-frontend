@@ -2,6 +2,7 @@
 @import "pages/project";
 @import "pages/login";
 
+@import "adminPages/index";
 @import "adminPages/admin";
 @import "adminPages/category";
 @import "adminPages/comment";
@@ -95,6 +96,7 @@ h1 {
 .admin-buttons {
   width: 100%;
   color: $white;
+  margin-top: 50px;
   margin-bottom: 30px;
 
   .btn-cancelar {
@@ -135,4 +137,14 @@ h1 {
 .header-cell-style {
   text-align: center;
   color: #14DB71;
+}
+
+.crud-fields {
+  width: 40%;
+  margin-bottom: 30px;
+
+  * {
+    font-size: 1.02em;
+    text-align: center;
+  }
 }

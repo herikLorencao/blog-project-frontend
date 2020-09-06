@@ -4,9 +4,6 @@
       <div class="row justify-center items-center">
         {{ name }}
       </div>
-      <div class="row justify-center items-center">
-        <q-icon :class="'icon ' + showActiveMenu()" name="fas fa-circle"></q-icon>
-      </div>
     </div>
   </router-link>
 </template>
@@ -26,11 +23,6 @@ export default {
     active: {
       required: true,
       type: String,
-    },
-  },
-  methods: {
-    showActiveMenu() {
-      return this.active === this.name ? 'enable' : 'disable';
     },
   },
 };
