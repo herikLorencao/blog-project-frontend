@@ -8,17 +8,30 @@ export default class CategoryService extends ApiClient {
 
   async find(id) {
     const resp = await this.get('categories', id);
-    return resp.data;
+    return resp;
   }
 
   async create(category) {
-    const resp = await this.category('categories', category);
-    return resp.data;
+    if (category.sub_category === '') {
+      category = {
+        name: category.name,
+      };
+    }
+
+    const resp = await this.post('categories', category);
+    return resp;
   }
 
   async edit(category) {
+    if (category.sub_category === '') {
+      category = {
+        id: category.id,
+        name: category.name,
+      };
+    }
+
     const resp = await this.put('categories', category.id, category);
-    return resp.data;
+    return resp;
   }
 
   async remove(id) {

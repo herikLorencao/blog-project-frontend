@@ -49,7 +49,7 @@
         <q-item to="/admin/posts"  v-show="menuOpen === 'posts'" clickable>
           <q-item-section class="submenu">Listar Posts</q-item-section>
         </q-item>
-        <q-item to="/admin/posts/comentarios" v-show="menuOpen === 'posts'" clickable>
+        <q-item to="/admin/comentarios" v-show="menuOpen === 'posts'" clickable>
           <q-item-section class="submenu">Comentários</q-item-section>
         </q-item>
         <q-item to="/admin/categorias" clickable>

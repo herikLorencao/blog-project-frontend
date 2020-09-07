@@ -1,13 +1,11 @@
 <template>
   <q-page class="flex column justify-center items-center">
     <div class="admin-page column justify-around items-center">
-      <h1>Editar Administrador</h1>
+      <h1>Editar Categoria</h1>
       <div class="crud-fields">
-        <q-input v-model="admin.login" color="green-13" placeholder="Login" dark/>
-        <q-input v-model="admin.email" color="green-13" placeholder="Email"
-                 dark/>
-        <q-input v-model="admin.password" color="green-13" placeholder="Senha" dark
-                 type="password"/>
+        <q-input v-model="category.name" color="green-13" placeholder="Nome" dark/>
+        <q-input v-model="category.sub_category" color="green-13" placeholder="Categoria Pai"
+                 dark type="number" :readonly="true"/>
         <div class="admin-buttons row justify-center">
           <q-btn @click="cancel" class="btn-cancelar" no-caps>Cancelar</q-btn>
           <q-btn @click="edit" type="submit" class="btn-salvar" no-caps>Salvar</q-btn>
@@ -18,23 +16,23 @@
 </template>
 
 <script>
-import AdminService from 'src/services/AdminService';
+import CategoryService from 'src/services/CategoryService';
 import notify, { TypeMessage } from 'src/mixins/notification';
 
 export default {
   data() {
     return {
-      service: new AdminService(),
-      admin: null,
+      service: new CategoryService(),
+      category: null,
     };
   },
   methods: {
     async edit() {
-      const resp = await this.service.edit(this.admin);
+      const resp = await this.service.edit(this.category);
 
       if (resp) {
-        notify('Administrador editado com sucesso!', TypeMessage.success);
-        await this.$router.push('/admin/administradores');
+        notify('Categoria editada com sucesso!', TypeMessage.success);
+        await this.$router.push('/admin/categorias');
       }
     },
     cancel() {
@@ -42,7 +40,7 @@ export default {
     },
   },
   async mounted() {
-    this.admin = await this.service.find(this.$route.params.id);
+    this.category = await this.service.find(this.$route.params.id);
   },
 };
 </script>

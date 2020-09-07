@@ -2,7 +2,7 @@
   <q-page class="flex column justify-center items-center">
     <div class="admin-page column justify-around items-center">
       <h1>Editar Post</h1>
-      <div v-if="post" class="crud-fields">
+      <div class="crud-fields">
         <q-input v-model="post.title" color="green-13" placeholder="Título" dark/>
         <q-editor class="descrition-input" v-model="post.content" min-height="7rem"
                   square dark placeholder="Conteúdo" />

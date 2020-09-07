@@ -48,6 +48,8 @@ const routes = [
     component: () => import('layouts/Admin.vue'),
     children: [
       { path: '', component: () => import('pages/admin/categories/Categories.vue') },
+      { path: 'adicionar', component: () => import('pages/admin/categories/CreateCategory.vue') },
+      { path: ':id', component: () => import('pages/admin/categories/EditCategory.vue') },
     ],
   },
   {
@@ -55,12 +57,12 @@ const routes = [
     component: () => import('layouts/Admin.vue'),
     children: [
       { path: '', component: () => import('pages/admin/posts/Posts.vue') },
-      { path: 'adicionar', component: () => import('pages/admin/posts/CreatePost') },
-      { path: ':id', component: () => import('pages/admin/posts/EditPost') },
+      { path: 'adicionar', component: () => import('pages/admin/posts/CreatePost.vue') },
+      { path: ':id', component: () => import('pages/admin/posts/EditPost.vue') },
     ],
   },
   {
-    path: '/admin/posts/comentarios',
+    path: '/admin/comentarios',
     component: () => import('layouts/Admin.vue'),
     children: [
       { path: '', component: () => import('pages/admin/comments/Comments.vue') },
