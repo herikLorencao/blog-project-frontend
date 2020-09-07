@@ -70,11 +70,11 @@ export default {
       this.admins = await this.service.listAll();
     },
     addAdmin() {
-      this.$router.push('/admin/admins/adicionar');
+      this.$router.push('/admin/administradores/adicionar');
     },
     editAdmin() {
       const adminId = this.selected[0].id;
-      this.$router.push(`/admin/admins/${adminId}`);
+      this.$router.push(`/admin/administradores/${adminId}`);
     },
     async removeAdmin() {
       const adminId = this.selected[0].id;

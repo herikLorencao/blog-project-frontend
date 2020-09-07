@@ -47,7 +47,7 @@ export default class ApiClient {
   async put(uri, id, data) {
     try {
       const resp = await this.client.put(`${uri}/${id}`, data);
-      return resp.data;
+      return resp;
     } catch (e) {
       this.handleErrors(e);
       return false;

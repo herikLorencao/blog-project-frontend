@@ -7,13 +7,13 @@ export default class AdminService extends ApiClient {
   }
 
   async find(id) {
-    const resp = this.get('admins', id);
-    return resp.data;
+    const resp = await this.get('admins', id);
+    return resp;
   }
 
   async create(admin) {
     const resp = this.post('admins', admin);
-    return resp.data;
+    return resp;
   }
 
   async edit(admin) {
