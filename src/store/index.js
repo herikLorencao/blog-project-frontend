@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import login from './login';
+import readerLogin from './readerLogin';
 
 Vue.use(Vuex);
 
@@ -21,6 +22,7 @@ export default function (/* { ssrContext } */) {
   Store = new Vuex.Store({
     modules: {
       login,
+      readerLogin,
     },
 
     // enable strict mode (adds overhead!)

@@ -1,6 +1,8 @@
 @import "pages/index";
 @import "pages/project";
+@import "pages/post";
 @import "pages/login";
+@import "pages/comment";
 
 @import "adminPages/index";
 @import "adminPages/admin";
@@ -141,6 +143,16 @@ h1 {
 
 .crud-fields {
   width: 40%;
+  margin-bottom: 30px;
+
+  * {
+    font-size: 1.02em;
+    text-align: center;
+  }
+}
+
+.crud-fields-editor {
+  width: 80%;
   margin-bottom: 30px;
 
   * {

@@ -7,8 +7,8 @@ export default class ReaderService extends ApiClient {
   }
 
   async find(id) {
-    const resp = this.get('readers', id);
-    return resp.data;
+    const resp = await this.get('readers', id);
+    return resp;
   }
 
   async create(reader) {

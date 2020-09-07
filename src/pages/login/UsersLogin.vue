@@ -8,24 +8,38 @@
                  placeholder="senha" />
       </div>
       <div class="login-buttons column items-center">
-        <q-btn class="login-button" no-caps>Entrar</q-btn>
-        <router-link class="link" to="esqueceusenha">
-          Esqueceu a senha?
-        </router-link>
+        <q-btn @click="login" class="login-button" no-caps>Entrar</q-btn>
+<!--        '<router-link class="link" to="esqueceusenha">-->
+<!--          Esqueceu a senha?-->
+<!--        </router-link>'-->
       </div>
     </div>
   </q-page>
 </template>
 
 <script>
+import LoginReaderService from 'src/services/LoginReaderService';
+import ReaderService from 'src/services/ReaderService';
+
 export default {
   data() {
     return {
+      service: new LoginReaderService(),
+      readerService: new ReaderService(),
       loginForm: {
         login: '',
         password: '',
       },
     };
+  },
+  methods: {
+    async login() {
+      const isLogged = await this.service.verifyLogin(this.loginForm);
+
+      if (isLogged) {
+        await this.$router.back();
+      }
+    },
   },
 };
 </script>

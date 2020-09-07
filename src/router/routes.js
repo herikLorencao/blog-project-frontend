@@ -14,6 +14,22 @@ const routes = [
     ],
   },
   {
+    path: '/comentarios',
+    component: () => import('layouts/Main.vue'),
+    children: [
+      { path: 'adicionar', component: () => import('pages/CreateComment.vue') },
+      { path: ':id', component: () => import('pages/EditComment.vue') },
+    ],
+  },
+  {
+    path: '/posts',
+    component: () => import('layouts/Main.vue'),
+    children: [
+      { path: '', component: () => import('pages/Posts.vue') },
+      { path: ':id', component: () => import('pages/PostContent.vue') },
+    ],
+  },
+  {
     path: '/login',
     component: () => import('layouts/Login.vue'),
     children: [

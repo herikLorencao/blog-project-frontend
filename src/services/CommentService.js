@@ -1,6 +1,10 @@
 import ApiClient from 'src/services/client/ApiClient';
 
 export default class CommentService extends ApiClient {
+  async searchByPost(postId) {
+    return this.list(`comments?postId=${postId}`);
+  }
+
   async listAll() {
     const resp = await this.list('comments');
     return resp.data;
@@ -8,12 +12,12 @@ export default class CommentService extends ApiClient {
 
   async find(id) {
     const resp = this.get('comments', id);
-    return resp.data;
+    return resp;
   }
 
   async create(comment) {
-    const resp = this.comment('comments', comment);
-    return resp.data;
+    const resp = this.post('comments', comment);
+    return resp;
   }
 
   async edit(comment) {

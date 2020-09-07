@@ -1,0 +1,102 @@
+.post-info {
+  color: $white;
+}
+
+.posts {
+  width: 100%;
+  margin-bottom: 50px;
+
+  .link {
+    cursor: pointer;
+  }
+
+  .link:hover {
+    background-color: $gray;
+  }
+
+  .home-light-card {
+    width: 100% !important;
+    height: 150px !important;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  .home-light-dark {
+    width: 100% !important;
+    height: 150px !important;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+}
+
+.navigation-menu-posts {
+  width: 100%;
+
+  .search-input {
+    width: 25%;
+    font-size: 1.1em;
+
+    @media (max-width: $breakpoint-md-min) {
+      width: 80%;
+    }
+
+    * {
+      text-align: center;
+    }
+  }
+
+  .category-search {
+    width: 25%;
+    margin-top: 20px;
+
+    @media (max-width: $breakpoint-md-min) {
+      width: 80%;
+    }
+
+    * {
+      font-size: 1em;
+    }
+  }
+
+  .search-btn {
+    background-color: $background-gray;
+    font-size: 1.1em;
+    color: $white;
+    margin-top: 20px;
+  }
+}
+
+.content {
+  width: 80%;
+  color: $white;
+  text-align: justify;
+  font-size: 1.2em;
+}
+
+.reader-user {
+  top: 2%;
+  right: 10%;
+  position: fixed;
+}
+
+.enable {
+  .btn {
+    background-color: $white;
+    color: $background-dark-gray;
+  }
+}
+
+.disable {
+  .btn {
+    background-color: $background-gray;
+    color: $white;
+  }
+}
+
+.btn-reader-action {
+  font-size: 1.1em;
+  background-color: $background-dark-gray;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

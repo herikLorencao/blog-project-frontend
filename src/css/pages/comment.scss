@@ -1,0 +1,24 @@
+.comment-fields {
+  width: 30%;
+  text-align: center;
+
+  * {
+    font-size: 1.05em;
+  }
+
+  @media (max-width: $breakpoint-md-min) {
+    width: 80%;
+  }
+
+  .add-comment-btn {
+    margin-top: 50px;
+    background-color: $background-gray;
+    color: $white;
+    font-size: 1em;
+  }
+
+  .comment-response {
+    margin-top: 50px;
+    width: 100%;
+  }
+}

@@ -25,6 +25,16 @@
     border-radius: 30px;
   }
 
+  .img {
+    min-height: 200px;
+    min-width: 200px;
+  }
+
+  .error-loading {
+    margin-top: 20px;
+    margin-left: 120px;
+  }
+
   @media (max-width: $breakpoint-md-min) {
     width: 80%;
     height: 80%;

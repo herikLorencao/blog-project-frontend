@@ -1,68 +1,33 @@
 <template>
-  <q-page class="flex justify-center items-start">
+  <q-page v-if="projects" class="flex justify-center items-start">
     <h1>Projetos</h1>
-    <div class="home-light-card row justify-center items-center breakpoint-grid">
-      <div class="grid-container column-xs row-md justify-center items-center">
-        <div class="project-info col-6 column items-xs-center items-md-start">
-          <h1>Projeto Exemplo - 1</h1>
-          <span class="link">
-            Link: <a href="https://github.com">https://github.com</a>
-          </span>
-          <span class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus sagittis
-          vestibulum. Curabitur leo sapien, dictum eu consequat at, facilisis non dui. Nulla
-          quis velit eget augue blandit faucibus at eget metus. Integer volutpat enim at velit
-          tincidunt, eu consequat urna dapibus. Quisque vel hendrerit magna.
-        </span>
-        </div>
-        <div class="project-image col-4">
-          <img src="../assets/example-image.jpg">
-        </div>
-      </div>
-    </div>
-    <div class="home-dark-card row justify-center items-center breakpoint-grid">
-      <div class="grid-container  column-xs row-md justify-center items-center">
-        <div class="project-image col-4">
-          <img src="../assets/example-image.jpg">
-        </div>
-        <div class="project-info col-6 column items-xs-center items-md-start">
-          <h1>Projeto Exemplo - 2</h1>
-          <span class="link">
-            Link: <a href="https://github.com">https://github.com</a>
-          </span>
-          <span class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus sagittis
-          vestibulum. Curabitur leo sapien, dictum eu consequat at, facilisis non dui. Nulla
-          quis velit eget augue blandit faucibus at eget metus. Integer volutpat enim at velit
-          tincidunt, eu consequat urna dapibus. Quisque vel hendrerit magna.
-        </span>
-        </div>
-      </div>
-    </div>
-    <div class="home-light-card row justify-center items-center breakpoint-grid">
-      <div class="grid-container column-xs row-md justify-center items-center">
-        <div class="project-info col-6 column items-xs-center items-md-start">
-          <h1>Projeto Exemplo - 3</h1>
-          <span class="link">
-            Link: <a href="https://github.com">https://github.com</a>
-          </span>
-          <span class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam faucibus sagittis
-          vestibulum. Curabitur leo sapien, dictum eu consequat at, facilisis non dui. Nulla
-          quis velit eget augue blandit faucibus at eget metus. Integer volutpat enim at velit
-          tincidunt, eu consequat urna dapibus. Quisque vel hendrerit magna.
-        </span>
-        </div>
-        <div class="project-image col-4">
-          <img src="../assets/example-image.jpg">
-        </div>
-      </div>
-    </div>
+    <CardProject v-for="(project, idx) in projects" :key="project.id" :title="project.title"
+                 :description="project.description" :img="project.img_url" :link="project.url"
+                 :idx="idx" />
+  </q-page>
+  <q-page class="column justify-center items-center" v-else>
+    <q-spinner
+      color="white"
+      :thickness="2"
+      size="10em"
+    />
   </q-page>
 </template>
 
 <script>
+import ProjectService from 'src/services/ProjectService';
+import CardProject from 'components/card-project/CardProject.vue';
+
 export default {
-  name: 'PageIndex',
+  components: { CardProject },
+  data() {
+    return {
+      service: new ProjectService(),
+      projects: null,
+    };
+  },
+  async mounted() {
+    this.projects = await this.service.listAll();
+  },
 };
 </script>
