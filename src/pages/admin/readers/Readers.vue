@@ -7,7 +7,6 @@
                  :selected.sync="selected" dark>
           <template v-slot:top>
             <div class="action-buttons">
-              <q-btn class="btn" label="Adicionar" @click="addReader" no-caps/>
               <q-btn class="btn btn-space" label="Permissões" v-show="tableIsSelected"
                      @click="editReader" no-caps/>
             </div>

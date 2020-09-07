@@ -8,17 +8,17 @@ export default class PostService extends ApiClient {
 
   async find(id) {
     const resp = await this.get('posts', id);
-    return resp.data;
+    return resp;
   }
 
   async create(post) {
     const resp = await this.post('posts', post);
-    return resp.data;
+    return resp;
   }
 
   async edit(post) {
     const resp = await this.put('posts', post.id, post);
-    return resp.data;
+    return resp;
   }
 
   async remove(id) {

@@ -55,6 +55,8 @@ const routes = [
     component: () => import('layouts/Admin.vue'),
     children: [
       { path: '', component: () => import('pages/admin/posts/Posts.vue') },
+      { path: 'adicionar', component: () => import('pages/admin/posts/CreatePost') },
+      { path: ':id', component: () => import('pages/admin/posts/EditPost') },
     ],
   },
   {
